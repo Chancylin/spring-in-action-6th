@@ -1,8 +1,11 @@
 package sia.tacocloud;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class TacoOrder {
     private String deliveryName;
     private String deliveryStreet;
