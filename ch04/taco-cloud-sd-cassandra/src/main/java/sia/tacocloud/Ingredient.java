@@ -1,22 +1,19 @@
 package sia.tacocloud;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED, force=true)
+@Table("ingredients")
 public class Ingredient {
 
-    // clin: because now we create Ingredient objects via CommandLineRunner()
-    // in TacoCloudApplication(), now these attributes cannot be "final"
-    @Id
+    @PrimaryKey
     private String id;
 
     private String name;
